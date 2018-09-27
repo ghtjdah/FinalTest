@@ -2,7 +2,7 @@
 
 def selectmenu(menulist):
     menu=input("메뉴 : ")
-    price=int(menulist.get(menu)/2)
+    price=int(menulist.get(menu))
     print('가격 : {}'.format(price))
 
 #___main___
