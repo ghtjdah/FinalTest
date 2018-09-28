@@ -1,6 +1,8 @@
 # 1번 문제
+from itertools import count
 
-def textfilter(text):
+
+def textfilter1(text):
     index=0
     newtext=''
     while(index != len(text)):
@@ -17,6 +19,21 @@ def textfilter(text):
     else:
         return newtext
 
+
+def textfilter2(text):
+    fronti,backi = 0,0
+    newtext = text
+    while(True):
+        if(newtext.find('<')==-1):
+            break
+        fronti = newtext.find('<')
+        backi = newtext.find('>') + 1
+        newtext = newtext.replace(newtext[fronti:backi],'')
+
+
+    return newtext
+
+
 #___main___
 text=''' <html>
     <body style='background-color:#ffff'>
@@ -28,5 +45,7 @@ text=''' <html>
     </body>
 <hyml>'''
 
-print(text)
-print(textfilter(text))
+
+#print(textfilter1(text))
+print(textfilter2(text))
+
